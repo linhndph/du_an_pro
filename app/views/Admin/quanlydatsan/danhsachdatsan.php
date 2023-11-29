@@ -49,20 +49,32 @@
                           Stt
                       </th>
                       <th style="width: 15%">
-                          Tên khách hàng
+                          Mã đặt sân
                       </th>
                       <th style="width: 15%">
                           Tên sân
                       </th>
                       <th style="width: 15%">
-                          Danh mục
+                          Ca sân
                       </th>
                     
                       <th style="width: 10%">
-                          Tên ca
+                          Tên khách hàng
                       </th>
                       <th style="width: 10%">
-                          Ngày sử dụng
+                          ID tài khoản
+                      </th>
+                      <th style="width: 10%">
+                          Số điện thoại
+                      </th>
+                      <th style="width: 10%">
+                          Email
+                      </th>
+                      <th style="width: 10%">
+                          Địa chỉ
+                      </th>
+                      <th style="width: 10%">
+                          Phương thức thanh toán
                       </th>
                       <th style="width: 10%" class="text-center">
                           Trạng thái
@@ -79,11 +91,40 @@
                  ?>
                  <tr>
                       <td>
-                          2
+                      <?php echo $id_ctdatsan ?>
                       </td>
                       <td>
                           <a>
-                              <?php echo $ten_kh ?>
+                              <?php echo $ma_dat_san ?>
+                          </a>                     
+                      </td>
+                      <td>
+                          <a>
+                          <?php echo $ten_san ?>
+                          </a>                     
+                      </td>
+                      <td>
+                          <a>
+                          <?php echo $ca_san ?>
+                          </a>                     
+                      </td>
+                      <td>
+                          <a>
+                          <?php echo $ten_kh ?>
+                          </a>                     
+                      </td>
+                      <td>
+                          <a>
+                          <?php echo $id_tai_khoan ?>
+                          </a>                     
+                      </td>
+                      <td class="project_progress">
+                       <!-- mô tả -->
+                       <?php echo $sdt_kh ?>
+                      </td>
+                      <td>
+                          <a>
+                          <?php echo $email ?>
                           </a>                     
                       </td>
                       <td>
@@ -91,17 +132,8 @@
                           <?php echo $dia_chi_kh ?>
                           </a>                     
                       </td>
-                      <td>
-                          <a>
-                          <?php echo $email ?>
-                          </a>                     
-                      </td>
-                   
                      
-                      <td class="project_progress">
-                       <!-- mô tả -->
-                       <?php echo $sdt_kh ?>
-                      </td>
+                     
                       <td class="project_progress">
                        <!-- mô tả -->
                        <?php echo $pttt ?>

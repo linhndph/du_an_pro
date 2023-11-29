@@ -332,7 +332,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'thanhtoan':
             if (isset($_SESSION["ten_dang_nhap"])) {
                 $bill = loadone_tk($_SESSION['id_tai_khoan']);
-                $listsan=loadone_SAN($id_san);
                 if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
                     $tong_don_hang = $_POST['tong_don_hang'];
                     $id_tk = $_POST['id'];
@@ -341,9 +340,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $email = $_POST['email'];
                     $sdt_kh = $_POST['sdt'];
                     $pttt = $_POST['pttt'];
+                    $ten_san = $_POST['ten_san'];
+                    $ca_san = $_POST['ca_san'];
                     $ma_dat_san = "PolyScoccer" . rand(0, 99999);
 
-                    $hd = insert_hoa_don($ma_dat_san, $tong_don_hang,$id_tk ,$ten_kh, $sdt_kh, $email, $dia_chi_kh, $pttt);
+                    $hd = insert_hoa_don($ma_dat_san, $tong_don_hang,$id_tk ,$ten_kh, $sdt_kh, $email, $dia_chi_kh, $pttt, $ten_san,$ca_san);
                     // $id_TaiKhoan = loadone_tk($_SESSION['id_tai_khoan']);
 
                     unset($_SESSION['dondatsan']);
