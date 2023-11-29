@@ -11,6 +11,7 @@ include "../models/quanlyhethong.php";
 include "../models/lienhe.php";
 include "../models/binhluan.php";
 include "../models/khuyenmai.php";
+include "../models/dondatsan.php";
 ?>
 <?
 include "../models/AdminModel.php";
@@ -186,6 +187,7 @@ if (isset($_GET['act']) && ($_GET['act']!= "")) {
 
         //Quản lý đặt sân
         case 'dsdatsan':
+            $bill=load_billdatsan();
             include '../views/Admin/quanlydatsan/danhsachdatsan.php';
             break;
         case 'suadsdatsan':

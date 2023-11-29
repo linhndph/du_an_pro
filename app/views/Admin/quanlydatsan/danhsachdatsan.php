@@ -57,9 +57,7 @@
                       <th style="width: 15%">
                           Danh mục
                       </th>
-                      <th style="width: 10%">
-                          Tên khuyến mãi
-                      </th>
+                    
                       <th style="width: 10%">
                           Tên ca
                       </th>
@@ -74,34 +72,39 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
+                 <?php  
+                 foreach($bill as $hd){
+                    extract($hd);
+                 
+                 ?>
+                 <tr>
                       <td>
                           2
                       </td>
                       <td>
                           <a>
-                              Duy Linh
+                              <?php echo $ten_kh ?>
                           </a>                     
                       </td>
                       <td>
                           <a>
-                              Sân 2
+                          <?php echo $dia_chi_kh ?>
                           </a>                     
                       </td>
                       <td>
                           <a>
-                              Sân bóng chuyền
+                          <?php echo $email ?>
                           </a>                     
                       </td>
                    
-                      <td>#sanbong</td>
+                     
                       <td class="project_progress">
                        <!-- mô tả -->
-                      Ca 4
+                       <?php echo $sdt_kh ?>
                       </td>
                       <td class="project_progress">
                        <!-- mô tả -->
-                      17/11
+                       <?php echo $pttt ?>
                       </td>
                       <td class="project-state">
                           <span class="badge badge-success">Đã đặt</span>
@@ -120,7 +123,6 @@
                           </a>
                       </td>
                   </tr>
-
-
+                    <?php } ?>
               </tbody>
           </table>            

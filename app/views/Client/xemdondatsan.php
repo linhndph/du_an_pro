@@ -110,10 +110,11 @@
                                     <form action="ClientController.php?act=thanhtoan" method="post">
                                         <input type="hidden" name="tong_don_hang" value="<?php echo $tong  ?>">
                                 <table >
-                                <tr><td><input class="input" type="text" name="hoten" placeholder="Nhập họ tên"></td></tr>
-                                <tr><td><input class="input" type="text" name="diachi" placeholder="Nhập địa chỉ"></td></tr>
-                                <tr><td><input class="input" type="text" name="email" placeholder="Nhập email"></td></tr>
-                                <tr><td><input class="input" type="text" name="sdt" placeholder="Nhập số điện thoại"></td></tr>
+                            <input class="input" type="hidden" value="<?php $bill = loadone_tk($_SESSION['id_tai_khoan']); if (isset($bill) && ($bill > 0)) echo $bill['id_tai_khoan'];?>" name="id" placeholder="id">
+                                <tr><td><input class="input" type="text" value="<?php  if (isset($bill) && ($bill > 0)) echo $bill['ten_tai_khoan'];?>" name="hoten" placeholder="Nhập họ tên"></td></tr>
+                                <tr><td><input class="input" type="text" value="<?php  if (isset($bill) && ($bill > 0)) echo  $bill['address'];?>" name="diachi" placeholder="Nhập địa chỉ"></td></tr>
+                                <tr><td><input class="input" type="text" value="<?php  if (isset($bill) && ($bill > 0)) echo  $bill['email'];?>" name="email" placeholder="Nhập email"></td></tr>
+                                <tr><td><input class="input" type="text" value="<?php  if (isset($bill) && ($bill > 0)) echo  $bill['sdt'];?>" name="sdt" placeholder="Nhập số điện thoại"></td></tr>
                                 <tr>
                                     <td id="ptttt">Phương thức thanh toán <br>
                                     <input type="radio" name="pttt" id="" value="1"> Thanh toán khi đá xong <br>

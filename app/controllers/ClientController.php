@@ -188,7 +188,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_SESSION['id_tai_khoan'])) {
                 $id_TaiKhoan = loadone_tk($_SESSION['id_tai_khoan']);
             }
-            
+
 
             if (isset($_GET['id_san']) && $_GET['id_san'] > 0) {
                 $id_san = $_GET['id_san'];
@@ -302,7 +302,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 // header("location:ClientController.php?act=xemdondatsan");
                 include '../views/Client/xemdondatsan.php';
                 break;
-            } 
+            }
             // include '';
             include '../views/Client/xemdondatsan.php';
             break;
@@ -330,27 +330,34 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             break;
         case 'thanhtoan':
+            if (isset($_SESSION["ten_dang_nhap"])) {
+                $bill = loadone_tk($_SESSION['id_tai_khoan']);
+                $listsan=loadone_SAN($id_san);
+                if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+                    $tong_don_hang = $_POST['tong_don_hang'];
+                    $id_tk = $_POST['id'];
+                    $ten_kh = $_POST['hoten'];
+                    $dia_chi_kh = $_POST['diachi'];
+                    $email = $_POST['email'];
+                    $sdt_kh = $_POST['sdt'];
+                    $pttt = $_POST['pttt'];
+                    $ma_dat_san = "PolyScoccer" . rand(0, 99999);
 
-            if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
-                $tong_don_hang = $_POST['tong_don_hang'];
-                $ten_kh = $_POST['hoten'];
-                $dia_chi_kh = $_POST['diachi'];
-                $email = $_POST['email'];
-                $sdt_kh = $_POST['sdt'];
-                $pttt = $_POST['pttt'];
-                $ma_dat_san = "PolyScoccer" . rand(0, 99999);
+                    $hd = insert_hoa_don($ma_dat_san, $tong_don_hang,$id_tk ,$ten_kh, $sdt_kh, $email, $dia_chi_kh, $pttt);
+                    // $id_TaiKhoan = loadone_tk($_SESSION['id_tai_khoan']);
 
-                $hd = insert_hoa_don($ma_dat_san, $tong_don_hang, $ten_kh, $sdt_kh, $email, $dia_chi_kh, $pttt);
-                unset($_SESSION['dondatsan']);
+                    unset($_SESSION['dondatsan']);
 
-                include "../views/Client/donhang.php";
-                break;
+                    include "../views/Client/donhang.php";
+                    break;
+                }
             }
-
             include "../views/Client/xemdondatsan.php";
             break;
 
         case 'donhang':
+
+
 
 
             include "../views/Client/donhang.php";

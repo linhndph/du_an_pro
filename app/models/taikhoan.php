@@ -22,6 +22,11 @@ function loadone_tk($id_tai_khoan){
     $taikhoan = pdo_query_one($sql);
     return $taikhoan;
 }
+// function loadone_hoadon($id_tai_khoan){
+//     $sql = "select * from tb_tai_khoan join chi_tiet_dat_san on tb_tai_khoan.id_ctdatsan = chi_tiet_dat_san.id_ctdatsan  where id_tai_khoan = '$id_tai_khoan'";
+//     $taikhoan = pdo_query_one($sql);
+//     return $taikhoan;
+// }
 
 function update_tai_khoan($id_tai_khoan,$ten_dang_nhap,$mat_khau,$sdt,$email,$address,$id_chuc_vu,$trang_thai,$img_tai_khoan,$ten_tai_khoan){
     if($img_tai_khoan!=""){
